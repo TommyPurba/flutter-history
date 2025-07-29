@@ -21,6 +21,7 @@ class _ScreenPageTemplate extends State<ScreenPage>{
   // menampung jawaban yang sudah di select
   List<String> selectAnswer = [];
   void swicthScreen (){
+    selectAnswer = [];
     setState(() {
       activeScreen = "quiz_screen";
     });
@@ -41,7 +42,7 @@ class _ScreenPageTemplate extends State<ScreenPage>{
       screenWidget = QuizScreen(onSelectAnswer: answerSelect,);
     }
      if(activeScreen == 'result_screen'){
-      screenWidget = ResultScreen(choosenSelect: selectAnswer,);
+      screenWidget = ResultScreen(choosenSelect: selectAnswer, swicthScreen);
     }
 
     return MaterialApp(
